@@ -1,0 +1,106 @@
+/* styleguide
+
+Moderate violet: hsl(263, 55%, 52%)
+Very dark grayish blue: hsl(217, 19%, 35%)
+Very dark blackish blue: hsl(219, 29%, 14%)
+White: hsl(0, 0%, 100%)
+
+Light gray: hsl(0, 0%, 81%)
+Light grayish blue: hsl(210, 46%, 95%)
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+
+- Font size: 13px
+
+- Family: [Barlow Semi Condensed](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
+- Weights: 500, 600
+
+*/
+
+/* FONT, RESET, VAR */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --bg-daniel: hsl(263, 55%, 52%);
+    --bg-jonathan: hsl(217, 19%, 35%);
+    --bg-patrick: hsl(219, 29%, 14%);
+    --bg-jeanette-kira: hsl(0, 0%, 100%);
+    --text-men: hsl(0, 0%, 81%);
+    --bg-body: hsl(210, 46%, 95%);
+    --font: 'Barlow Semi Condensed', sans-serif;
+}
+
+/* MAIN LAYOUT */
+body {
+    min-height: 100vh;
+    background-color: var(--bg-body);
+    font-family: var(--font);
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main {
+    width: 70%;
+    display: grid;
+    gap: 25px;
+    grid-template: 1fr 1fr / repeat(4, 1fr);
+}
+
+/* BOXES */
+#clifford-review {
+    grid-column-start: span 2;
+    order: 0;
+    background-color: var(--bg-daniel);
+}
+
+#walters-review {
+    order: 1;
+    background-color: var(--bg-jonathan);
+}
+
+#whittle-review {
+    grid-row-start: 2 span;
+    order: 2;
+    background-color: var(--bg-jeanette-kira);
+}
+
+#harmon-review {
+    order: 3;
+    background-color: var(--bg-jeanette-kira);
+}
+
+#abrams-review {
+    grid-column: 2 / 4;
+    order: 4;
+    background-color: var(--bg-patrick);
+}
+
+.box {
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.name, .review {
+    font-size: 12px;
+}
+
+.degree {
+    font-size: 10px;
+}
+
+.abstract {
+    font-size: 18px;
+}
+
+.men-text {
+    color: var(--text-men);
+}
